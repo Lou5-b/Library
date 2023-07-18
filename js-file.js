@@ -25,6 +25,7 @@ button.onclick = function() {
 let submit = document.getElementById('sub')
 
 submit.onclick = function() {
+    
     if (document.getElementById("fname").value == "" || document.getElementById("lname").value == "" || document.getElementById("nname").value == "") {
         alert("enter text in each box")
     } else {
@@ -47,18 +48,31 @@ submit.onclick = function() {
         div3.innerHTML += document.getElementById("nname").value;
         div3.className = "card-text";
 
+        //Delete Button
         var btn1 = document.createElement('button')
         div.appendChild(btn1);
         btn1.innerHTML += "delete";
-        btn1.className = "card-button";
+        btn1.className = "card-delete";
+        btn1.onclick = function() {
+            div.remove()
+        }
 
+        //Read Butotn
         var btn2 = document.createElement('button')
         div.appendChild(btn2);
         btn2.innerHTML += "read";
-        btn2.className = "card-button";
+        btn2.className = "card-read";
+        btn2.onclick = function() {
+            if (div.className == "book") {
+                div.className = "readbook";
+            } else {
+                div.className = "book";
+            }
+        }
     }
 }
 //Submits Book
+
 
 function Book() {
 
