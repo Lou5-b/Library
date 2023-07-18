@@ -2,6 +2,7 @@ let myLibrary = [];
 
 let contain = document.getElementById('container')
 document.getElementById('frm').style.visibility = "hidden";
+document.getElementById('sub').style.visibility = "hidden";
 
 myLibrary.forEach(function(item) {
     var div = document.createElement('div');
@@ -16,8 +17,10 @@ let button = document.getElementById('btn')
 button.onclick = function() {
     if (document.getElementById('frm').style.visibility ==  "visible") {
         document.getElementById('frm').style.visibility = "hidden";
+        document.getElementById('sub').style.visibility = "hidden";
     } else if (document.getElementById('frm').style.visibility ==  "hidden") {
         document.getElementById('frm').style.visibility = "visible";
+        document.getElementById('sub').style.visibility = "visible";
     }
 }
 //Displays Book Submission
@@ -25,7 +28,7 @@ button.onclick = function() {
 let submit = document.getElementById('sub')
 
 submit.onclick = function() {
-    
+
     if (document.getElementById("fname").value == "" || document.getElementById("lname").value == "" || document.getElementById("nname").value == "") {
         alert("enter text in each box")
     } else {
